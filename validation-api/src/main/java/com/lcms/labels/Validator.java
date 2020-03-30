@@ -2,8 +2,8 @@ package com.lcms.labels;
 
 import java.util.List;
 
-public interface Validator<DocumentLabelType extends DocumentLabel> {
+public interface Validator {
 
-	public List<ValidationResult> validate(final DocumentLabelType label);
+	public List<ValidationResult> validate(final DocumentLabel label);
 
 }

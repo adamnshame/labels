@@ -61,8 +61,9 @@ public class DocumentLabelIdentifier {
 	}
 
 	public static DocumentLabelIdentifier extract(final Class<? extends DocumentLabel> clazz) {
-		// TODO
-		return null;
+		final DocumentLabelSchema schema = clazz.getAnnotation(DocumentLabelSchema.class);
+		final DocumentLabelVersion version = clazz.getAnnotation(DocumentLabelVersion.class);
+		return new DocumentLabelIdentifier(schema.value(), version.value());
 	}
 
 }

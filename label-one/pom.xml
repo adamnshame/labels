@@ -15,12 +15,12 @@
 		<dependency>
 			<groupId>com.lcms.labels</groupId>
 			<artifactId>labels-core-api</artifactId>
-			<version>${version}</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.lcms.labels</groupId>
 			<artifactId>labels-validation-api</artifactId>
-			<version>${version}</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 </project>

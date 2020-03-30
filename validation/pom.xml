@@ -15,7 +15,48 @@
 		<dependency>
 			<groupId>com.lcms.labels</groupId>
 			<artifactId>labels-validation-api</artifactId>
-			<version>${version}</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Main-Class>com.lcms.labels.ValidationService</Main-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifestEntries>
+							<Main-Class>com.lcms.labels.ValidationService</Main-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>assemble-all</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
